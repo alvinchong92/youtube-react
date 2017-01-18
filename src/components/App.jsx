@@ -12,9 +12,13 @@ export default class App extends React.Component {
     this.state = {
       videos: [],
       selectedVideo: null,
-    }
+    };
+    this.videoSearch('ice cream');
+    this.videoSearch = this.videoSearch.bind(this);
+  }
 
-    YTSearch({key: API_key, term:'ice cream'}, (videos) => {
+  videoSearch(term) {
+    YTSearch({key: API_key, term: term}, (videos) => {
       console.log(videos)
       this.setState({
         videos: videos,
@@ -27,9 +31,10 @@ export default class App extends React.Component {
     return(
       <div>
         Not the real Youtube.
-        <SearchBar />
+        <SearchBar onVideoSearch={this.videoSearch} />
         <VideoDetail video={this.state.selectedVideo} />
-        <VideoList videos={this.state.videos} />
+        <VideoList videos={this.state.videos}
+        onVideoSelect={selectedVideo => this.setState({selectedVideo})} />
       </div>
     )
   }
