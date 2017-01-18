@@ -3,9 +3,9 @@ import React from 'react';
 const VideoListItem = ({video, selectedVideo}) => {
   const imageUrl = video.snippet.thumbnails.default.url;
   return(
-    <li onClick={() => selectedVideo(video)}>
-      <div>
-        <div>
+    <li onClick={() => selectedVideo(video)} className="list-group-item">
+      <div className="video-list media">
+        <div className="media-left">
           <img className='media-object' src={imageUrl} />
         </div>
 
@@ -14,7 +14,7 @@ const VideoListItem = ({video, selectedVideo}) => {
         </div>
       </div>
   </li>
-  )
+  );
 }
 
 export default VideoListItem;

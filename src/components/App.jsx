@@ -13,7 +13,7 @@ export default class App extends React.Component {
       videos: [],
       selectedVideo: null,
     };
-    this.videoSearch('ice cream');
+    this.videoSearch('');
     this.videoSearch = this.videoSearch.bind(this);
   }
 
@@ -30,7 +30,7 @@ export default class App extends React.Component {
   render() {
     return(
       <div>
-        Not the real Youtube.
+        <h3 className="title">Not the real Youtube. </h3>
         <SearchBar onVideoSearch={this.videoSearch} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList videos={this.state.videos}
