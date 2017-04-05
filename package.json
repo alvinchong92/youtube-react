@@ -28,5 +28,8 @@
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
     "youtube-api-search": "0.0.5"
+  },
+  "engines": {
+    "node": "6.5.0"
   }
 }
