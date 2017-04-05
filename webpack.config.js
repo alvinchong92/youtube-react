@@ -27,10 +27,13 @@
 
 
 const path = require('path');
+const webpack = require('webpack')
 
 module.exports = {
   devtool: 'source-map',
-  entry: path.join(__dirname, 'src', 'index.js'),
+  // entry: path.join(__dirname, 'src', 'index.js'),
+  entry: [ './src/index.js'
+  ],
   devServer: {
     contentBase: path.join(__dirname, 'src', 'static'),
     inline: true,
@@ -40,6 +43,15 @@ module.exports = {
     path: path.join(__dirname, 'src', 'static', 'js'),
     filename: 'bundle.js',
   },
+  plugins: [
+  new webpack.optimize.DedupePlugin(),
+  new webpack.optimize.UglifyJsPlugin({
+    minimize: true,
+    compress: {
+      warnings: false
+    }
+  })
+],
   module: {
     loaders: [
       {
