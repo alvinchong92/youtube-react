@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+     "start": "npm run build",
+    "build": "webpack -p && webpack-dev-server",
     "dev": "webpack-dev-server --hot --progress --colors"
   },
   "repository": {
