@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '/')));
 app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname, 'index.html'));
+  response.sendFile(path.join(__dirname, '/index.html'));
 });
 
 
