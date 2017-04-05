@@ -8,3 +8,8 @@ app.get('/', (request, response) => {
 });
 
 app.listen(process.env.PORT || 8080);
+
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log(`LISTENING on Port ${port}`);
+});
