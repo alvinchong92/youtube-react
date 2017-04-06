@@ -2,7 +2,7 @@
   "name": "youtube-react",
   "version": "1.0.0",
   "description": "youtube clone",
-  "main": "index.js",
+  "main": "index.jsx",
   "engines": {
     "node": "6.5.0"
   },
