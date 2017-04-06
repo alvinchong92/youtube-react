@@ -1,27 +1,20 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
   devtool: 'source-map',
-  entry: path.join(__dirname, 'src', 'index.jsx'),
+    entry: [
+    './src/index.jsx'
+  ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     inline: true,
     port: 8080,
   },
   output: {
-    path: path.join(__dirname, 'dist', 'js'),
+    path: __dirname,
+    publicPath: '/',
     filename: 'bundle.js',
   },
-  plugins: [
-  new webpack.optimize.DedupePlugin(),
-  new webpack.optimize.UglifyJsPlugin({
-    minimize: true,
-    compress: {
-      warnings: false
-    }
-  })
-],
   module: {
     loaders: [
       {
