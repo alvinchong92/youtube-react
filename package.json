@@ -9,9 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
      "start": "npm run build",
-    "build": "webpack -p && webpack-dev-server",
-    "dev": "webpack-dev-server --hot --progress --colors",
-    "prod": "NODE_ENV=production node server.js",
+     "build": "webpack -p && webpack-dev-server",
+     "dev": "webpack-dev-server --hot --progress --colors",
+     "prod": "NODE_ENV=production node server.js"
   },
   "repository": {
     "type": "git",
